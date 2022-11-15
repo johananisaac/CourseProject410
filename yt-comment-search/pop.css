@@ -1,0 +1,75 @@
+
+*{
+    box-sizing:border-box;
+    font-family:cursive, Courier, monospace;
+}
+
+body{
+    background-color:#e7a977;
+    color:#252424
+}
+
+h1{
+    border:3px solid #9c0202;
+    color:#f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#f20207;
+    border-radius: 12px;
+    padding:8px;
+    text-align: center;
+    margin-top:0
+
+}
+.ycse410-main{
+    margin-left: 0;
+    font-size:14px;
+    padding:8px;
+    width:500px
+}
+p.ycse410-info-title{
+    border:3px solid #adadad;
+    color:#fff;
+    background-color:#f20207;
+    padding:5px;
+    
+    margin-top:0
+}
+.ycse410-intro{
+    margin-top: -15;
+    font-style: italic;
+    text-align: center;
+    font-size: small;
+
+}
+
+.ycse410_opts_btn{
+    background-color:#2f3640;
+    border:2px solid #9c0202;
+    color:#fff;
+    cursor:pointer;
+    font-size:14px;
+    margin:0;
+    padding:5px
+}
+.ycse410_query_search_box{
+    color:#252424;
+    cursor:pointer;
+    font-size:14px;
+    margin:0;
+    padding:5px
+}
+.ycse410_opts_btn:hover{background-color:#262626;color:#fff}
+.ycse410_opt_mark{color:rgb(223, 223, 223)}
+.ycse410_opt_desc_head p{margin:5px 0}
+.ycse410_opt_desc_head{
+    text-align: center;
+    border:5px dotted #b30404;
+    margin-bottom:10px;
+    padding:2px}
+.ycse410_left{float:left}
+.ycse410_right{float:right}
+.ycse410_clear{clear:both}
+.ycse410_btns_remove_cache{
+    background-color:#f20207;
+    color:#fff}
+.ycse410_btns_remove_cache:hover{background-color:#680000}

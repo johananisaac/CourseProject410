@@ -1,10 +1,20 @@
 {
+  "name": "youtube comment search engine",
+  "description": "A tool for searching comment in youtube",
+  "version": "1.0.1",
   "manifest_version": 3,
-  "name": "Youtube Comment Search",
-  "description": "Base Level Extension",
-  "version": "1.0",
   "action": {
-    "default_popup": "base.html",
-    "default_icon": "placeholder.png"
+    "default_popup": "popup.html",
+    "default_icon":{
+      "16": "images/youtubeicon.png"
+    } 
+  },
+  "icons": {
+    "16": "images/youtubeicon.png",
+    "32": "images/youtubeicon.png",
+    "48": "images/youtubeicon.png",
+    "128": "images/youtubeicon.png"
+
+
+    }
   }
-}
