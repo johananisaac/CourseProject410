@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<title>Hello from Flask</title>
+<tbody>
+  {% for key,value in data.items() %}
+  <tr>
+    <p>{{key+'. '+ value+'/n'}}</p>
+  </tr>
+  {% endfor %}
+</tbody>
