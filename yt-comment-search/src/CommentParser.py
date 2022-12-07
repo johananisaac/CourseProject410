@@ -9,40 +9,24 @@ class CommentParser:
 		self.comment = dict()
 		self.commentline = dict()
 
-	def parsetxt(self):
-		commentStoreList=[]
-		with open(self.filename) as f:
-			for line in f:
-				commentStoreList.append(line)
-		docnum = 0
-		for eachComment in commentStoreList:
-			docID = str(docnum)
-			self.commentline[docID] = eachComment
-			eachComment=re.sub('[(),.<>]', '', eachComment)
-			text = eachComment.split()
-			self.comment[docID] = text
-			docnum += 1
-		#print(self.comment["3"])
-
-	def parsejson(self):
-		commentStoreList=[]
+	def parsejsonwithinfo(self):
 		with open(self.filename,'rb') as file:
-			data = json.load(file)
+			data = json.load(file, encoding = 'UTF-8')
 		numOfComments = data['comments']
-		for i in range(len(numOfComments)):
-			commentStoreList.append(numOfComments[i]['text'])
-		docnum = 0
-		for eachComment in commentStoreList:
+		for docnum in range(len(numOfComments)):
 			docID = str(docnum)
-			self.commentline[docID] = eachComment
-			eachComment=re.sub('[(),.<>]', '', eachComment)
+			commentText = numOfComments[docnum]['text']
+			self.commentline[docID] = commentText
+			self.commentlinewithinfo[docID] = numOfComments[docnum]
+			eachComment = re.sub('[(),.<>]', '', commentText)
 			text = eachComment.split()
 			self.comment[docID] = text
-			docnum += 1
-		#print(self.comment["3"])
 
 	def getcomment(self):
 		return self.comment
 
 	def getcommentLine(self):
 		return self.commentline
+	
+	def getcommentLinewithinfo(self):
+		return self.commentlinewithinfo
