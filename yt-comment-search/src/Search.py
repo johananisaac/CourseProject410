@@ -52,7 +52,7 @@ class Search:
                 profileToShow = commentlineinfo[str(i[0])]['authorProfilePic']
                 tmplist = [queryNum, i[0], index, i[1],textsToShow,authorToShow,numLikesToShow,numberRepliesToShow,timestampToShow,profileToShow]
                 index += 1
-                returnedlist[str(index)] = tmplist)
+                returnedlist[str(index)] = tmplist
             queryNum += 1
         return returnedlist
 
