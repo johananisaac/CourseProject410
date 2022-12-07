@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <title>Hello from Flask</title>
-<tbody>
+<body style="background-color: #e7a977;">
   {% for key,value in data.items() %}
   <tr>
-    <p>{{key+'. '+ value+'/n'}}</p>
+    <p style="font-family:cursive">{{key+'. '}}<img id="img" draggable="false" class="style-scope yt-img-shadow" 
+        alt="Chocing late" height="40" width="40" 
+        src={{value[9]}}>
+        {{value[5] + 'Time: ' + value[8]}}</p>
+    <p style="font-family:cursive">{{value[4]}}</p>
+    <p style="font-family:cursive">{{'numberlikes:' + value[6]}}</p>
+    
   </tr>
   {% endfor %}
-</tbody>
+</body>
+
