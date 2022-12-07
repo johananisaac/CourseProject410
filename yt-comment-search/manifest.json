@@ -14,7 +14,20 @@
     "32": "images/youtubeicon.png",
     "48": "images/youtubeicon.png",
     "128": "images/youtubeicon.png"
-
-
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+     "matches": ["*://*.youtube.com/watch?v=*"],
+     "run_at": "document_start",
+     "js": ["fetchComments.js"]
     }
-  }
+  ],
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ]
+}

@@ -2,14 +2,16 @@ from QueryParser import *
 from CommentParser import *
 from QueryProcessor import QueryProcessor
 import operator
+import os
 
 class Search:
 
 
     def __init__(self):
         self.index = dict()
-        self.queryfilename = './text/query.txt'
-        self.commentfilename = './text/comment2.json'
+        dirname = os.path.join(os.path.dirname(__file__), '..', 'text')
+        self.queryfilename = os.path.join(dirname, 'query.txt')
+        self.commentfilename = os.path.join(dirname, 'comment2.json')
         #self.commentfilename = './text/commenttest.txt'
         self.result = dict()
 

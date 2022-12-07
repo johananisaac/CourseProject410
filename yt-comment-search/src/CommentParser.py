@@ -27,7 +27,7 @@ class CommentParser:
 	def parsejson(self):
 		commentStoreList=[]
 		with open(self.filename,'rb') as file:
-			data = json.load(file, encoding = 'UTF-8')
+			data = json.load(file)
 		numOfComments = data['comments']
 		for i in range(len(numOfComments)):
 			commentStoreList.append(numOfComments[i]['text'])

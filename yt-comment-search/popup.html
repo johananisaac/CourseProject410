@@ -7,12 +7,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&amp;display=swap" rel="stylesheet">
         <link rel="stylesheet" href="pop.css">
+        <script src="fetchComments.js"></script>
     </head>
     <body>
         <div class="ycse410-main"> 
             <div class="ycse410-info"> 
                 <h1 class="ycse410-info-title">YouTube Comment Search Engine</h1> 
-                <p class="ycse410-intro">Author - Jiyao Zou & Johanan Issac<br>
+                <p class="ycse410-intro">Author - Jiyao Zou & Johanan Isaac<br>
                     for the use of CS410 (2022Fall) project only
                 </p> 
                 <p class="ycse410-info-desc">Search comments, replies, chat replay, video transcript for the current video on YouTube by contents, authors, time.</p> 
@@ -24,18 +25,14 @@
                 
                         <div class="ycse410_query_search_box">
                             <p><b>Search comment box:</b></p>
-                            <input style="width:400px;height:20px" type="text" placeholder="Please enter your query here">
+                            <form action="http://127.0.0.1:5102/query" method="post">
+                                <input style="width:400px;height:20px" type="text" placeholder="Please enter your query here" name="query" value="">
+                                <p> 
+                                    <button class="ycse410_btns_remove_cache ycse410_opts_btn" type="submit" id="ycse410_opts_btn_cache">Search</button> 
+                                </p> 
+                            </form>
 
                         </div>
-                        <p> 
-                            <button class="ycse410_btns_remove_cache ycse410_opts_btn" type="button" id="ycse410_opts_btn_cache" name="Clear all cache" title="Clear all cache">Search</button> 
-                        </p> 
-                        <p>Browser memory usage, information:</p> 
-                        <div> 
-                            <p>Total comments in this video: 
-                                <span class="ycse410_opt_mark" id="ycse410_total_cache">100</span>
-                            </p> 
-                        </div> 
                 </div> 
             </div> 
         </div> 

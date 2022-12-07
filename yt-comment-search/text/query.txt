@@ -1,1 +1,1 @@
-simple shear flow.
+slow ugly buggy
