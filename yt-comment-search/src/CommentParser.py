@@ -8,6 +8,7 @@ class CommentParser:
 		#self.regex = re.compile('^#\s*\d+')
 		self.comment = dict()
 		self.commentline = dict()
+		self.commentlinewithinfo = dict()
 
 	def parsejsonwithinfo(self):
 		with open(self.filename,'rb') as file:
