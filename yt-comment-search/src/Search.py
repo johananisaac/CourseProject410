@@ -31,10 +31,9 @@ class Search:
                 textsToShow = commentlineinfo[str(i[0])]['text'].strip('\n')
                 authorToShow = commentlineinfo[str(i[0])]['authorName']
                 numLikesToShow = str(commentlineinfo[str(i[0])]['numLikes'])
-                numberRepliesToShow = str(commentlineinfo[str(i[0])]['numReplies'])
                 timestampToShow = commentlineinfo[str(i[0])]['timestamp']
                 profileToShow = commentlineinfo[str(i[0])]['authorProfilePic']
-                tmplist = [queryNum, i[0], index, i[1],textsToShow,authorToShow,numLikesToShow,numberRepliesToShow,timestampToShow,profileToShow]
+                tmplist = [queryNum, i[0], index, i[1],textsToShow,authorToShow,numLikesToShow,timestampToShow,profileToShow]
                 index += 1
                 returnedlist[str(index)] = tmplist
             queryNum += 1

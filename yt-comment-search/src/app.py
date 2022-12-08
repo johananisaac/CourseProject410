@@ -2,6 +2,7 @@
 from flask import Flask, request, jsonify
 from flask import render_template
 from Search import Search
+from CommentExtractor import CommentExtractor
 
 import json
 import os
@@ -21,9 +22,15 @@ def showResult():
 @app.route('/query', methods=["POST"])
 def get_query():
     data = request.form
-    print(data['query'])
+    videoID = data['url'].split("?v=").pop()
+    query = data['query']
     ## Run query and get results
-    return render_template('search.html', data = Search(comments).getRankedResult(data['query']))
+    print(videoID)
+    extractor = CommentExtractor()
+    extractor.requestComments(videoID)
+    comments = extractor.getComments()
+    print(comments)
+    return render_template('search.html', data = Search(comments).getRankedResult(query))
 
 @app.after_request
 def after_request(response):
