@@ -3,27 +3,27 @@ from flask import Flask, request, jsonify
 from flask import render_template
 from Search import Search
 
+import json
+import os
+
 app = Flask(__name__,template_folder='../output')
 
 @app.route('/')
 def showResult():
-    data = Search().getRankedResult()
-
-    return render_template('search.html', data = Search().getRankedResult())
-
-@app.route('/comments', methods=["POST"])
-def add_comments():
-    print(request.json["commentData"])
-    ## Send comments to get stored
-    return {"response": "comments added"}
+    #data = Search().getRankedResult()
+    dirname = os.path.join(os.path.dirname(__file__), '..', 'text')
+    commentfilename = os.path.join(dirname, 'comments4.json')
+    with open(commentfilename, 'rb') as file:
+        comments = json.load(file)
+    query = "peppa pig"
+    return render_template('search.html', data = Search(comments).getRankedResult(query))
 
 @app.route('/query', methods=["POST"])
 def get_query():
     data = request.form
     print(data['query'])
     ## Run query and get results
-
-    return {"response": "comments added"}
+    return render_template('search.html', data = Search(comments).getRankedResult(data['query']))
 
 @app.after_request
 def after_request(response):

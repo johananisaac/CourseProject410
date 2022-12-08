@@ -7,7 +7,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&amp;display=swap" rel="stylesheet">
         <link rel="stylesheet" href="pop.css">
-        <script src="fetchComments.js"></script>
+        <script src="popup.js"></script>
     </head>
     <body>
         <div class="ycse410-main"> 
@@ -27,6 +27,7 @@
                             <p><b>Search comment box:</b></p>
                             <form action="http://127.0.0.1:5102/query" method="post">
                                 <input style="width:400px;height:20px" type="text" placeholder="Please enter your query here" name="query" value="">
+                                <input id="pageURL" type="hidden" name="url" value="">
                                 <p> 
                                     <button class="ycse410_btns_remove_cache ycse410_opts_btn" type="submit" id="ycse410_opts_btn_cache">Search</button> 
                                 </p> 

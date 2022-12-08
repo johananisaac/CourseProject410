@@ -20,14 +20,13 @@
   },
   "content_scripts": [
     {
-     "matches": ["*://*.youtube.com/watch?v=*"],
+     "matches": ["*://*.youtoube.com/watch?v=*"],
      "run_at": "document_start",
      "js": ["fetchComments.js"]
     }
   ],
   "permissions": [
     "activeTab",
-    "storage",
     "tabs"
   ]
 }

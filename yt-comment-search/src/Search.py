@@ -7,30 +7,14 @@ import os
 class Search:
 
 
-    def __init__(self):
+    def __init__(self, comments):
         self.index = dict()
-        dirname = os.path.join(os.path.dirname(__file__), '..', 'text')
-        self.queryfilename = os.path.join(dirname, 'query.txt')
-        self.commentfilename = os.path.join(dirname, 'comment2.json')
-        #self.commentfilename = './text/commenttest.txt'
         self.result = dict()
+        self.comments = comments
 
-    def getqueryfile(self):
-        return self.queryfilename
-
-    def getcommentfile(self):
-        return self.commentfilename
-    
-    def setqueryfile(self,filename):
-        self.queryfilename = filename
-
-    def setcommentfile(self,filename):
-        self.commentfilename = filename
-
-    def getRankedResult(self):
-        
-        query = QueryParser(self.getqueryfile())
-        comment = CommentParser(self.getcommentfile())
+    def getRankedResult(self, queryData):
+        query = QueryParser(queryData)
+        comment = CommentParser(self.comments)
         query.parse()
         parsedQuery = query.getQuery()
         parsedComment = comment.getcomment()

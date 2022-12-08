@@ -11,7 +11,9 @@ class QueryProcessor:
 	
 	def run(self):
 		results = []
+		print(self.queries)
 		for query in self.queries:
+			#print(query)
 			results.append(self.run_query(query))
 		return results
 

@@ -110,7 +110,7 @@ async function getComments() {
   });*/
   //let videoId = videoUrl.split("?v=").pop()
   //let videoId = await getVideoId();
-  let videoId = "O_3Xf3gTzEE"
+  let videoId = "CIP15JORgRA"
   //let videoId = window.location.href.split("?v=").pop()
   //alert(videoId)
   await fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${videoId}&key=${API_KEY}`)
