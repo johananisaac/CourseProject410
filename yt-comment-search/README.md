@@ -12,9 +12,9 @@ search.html can now show the additional information including author name, numbe
 ### (1) An overview of the project
 The project applies some basic natural language processing techniques to process the text data from Youtube video comments and return comments according to their ranking score, given a search query. The project includes front-end and back-end interactions. We use the chrome extension package manifest V3, HTML, CSS and JavaScript for the front-end development and python for the back-end development. A user can get the searched result by opening up the extension in a Youtube video page, entering a query in the input textbox, then clicking the search button. Top-ranked comments, author names, profile photos, timestamps, and the number of replies will be displayed on a new page.
 ### (2) Team member contributions
-Jiyao Zou - I created and designed a popup section for chrome extensions. I also wrote and modified python files to parse the JSON files received from the front end, run BM25 and return the ranked list of comments. Furthermore, I wrote and designed the popup page when the user clicks the search button.
+- **Jiyao Zou** - I created and designed a popup section for chrome extensions. I also wrote and modified python files to parse the JSON files received from the front end, run BM25 and return the ranked list of comments. Furthermore, I wrote and designed the popup page when the user clicks the search button.
 
-Johanan Isaac - I wrote the code for extracting and storing comments from the YouTube API. I also wrote the code for communication between the extension and server, the server API endpoints, and the database which stores the comments for each video.
+- **Johanan Isaac** - I wrote the code for extracting and storing comments from the YouTube API. I also wrote the code for communication between the extension and server, the server API endpoints, and the database which stores the comments for each video.
 ### (3) Libraries, models or other third-party tools:
 ##### Programming Languages:
 - Python
