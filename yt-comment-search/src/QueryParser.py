@@ -11,7 +11,7 @@ class QueryParser:
         query = self.query.lower()
         query = re.sub(r'[%s]' % re.escape(string.punctuation), '', query)
         self.queries.append(query.split())
-        print('query',self.queries)
+        #print('query',self.queries)
         
     def getQuery(self):
         return self.queries

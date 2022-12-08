@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<title>Hello from Flask</title>
-<body style="background-color: #e7a977;">
-  {% for key,value in data.items() %}
-  <tr>
-    <p style="font-family:cursive">{{key+'. '}}<img id="img" draggable="false" class="style-scope yt-img-shadow" 
-        alt="Chocing late" height="40" width="40" 
-        src={{value[8]}}>
-        {{value[5] + 'Time: ' + value[7]}}</p>
-    <p style="font-family:cursive">{{value[4]}}</p>
-    <p style="font-family:cursive">{{'numberlikes:' + value[6]}}</p>
-    
-  </tr>
-  {% endfor %}
-</body>
+<html>
+  <head>
+    <title>Search Results</title>
+  </head>
+  <body style="background-color: #e7a977;">
+    {% for key,value in data.items() %}
+    <tr>
+      <div id="comment" style="background-color: white; border-radius: 25px; box-shadow: 10px 10px 5px #c48857;">
+        <div id="info" style="margin-left: 20px">
+          <p style="font-family:cursive">{{key+'. '}}</p>
+          <img id="img" style="border-radius: 50%" draggable="false" class="style-scope yt-img-shadow" alt="Chocing late" height="40" width="40" src={{value[8]}}>
+        </div>
+        <div id="commentblock" style="margin-left: 50px;">
+          <p style="font-weight: bold; font-size: 16">{{value[5]}}
+              <p style="font-weight: lighter;">{{' Time: ' + value[7]}}</p>
+          </p>
+          <p style="font-family:cursive">{{value[4]}}</p>
+          <p style="font-family:cursive">{{'Number of likes: ' + value[6]}}</p>
+        </div>
+      </div>
+    </tr>
+    {% endfor %}
+  </body>
+</html>
 

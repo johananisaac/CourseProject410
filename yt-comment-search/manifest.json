@@ -1,6 +1,6 @@
 {
-  "name": "youtube comment search engine",
-  "description": "A tool for searching comment in youtube",
+  "name": "YouTube Comment Search Engine",
+  "description": "A tool for searching comments in YouTube",
   "version": "1.0.1",
   "manifest_version": 3,
   "action": {
@@ -15,16 +15,6 @@
     "48": "images/youtubeicon.png",
     "128": "images/youtubeicon.png"
   },
-  "background": {
-    "service_worker": "background.js"
-  },
-  "content_scripts": [
-    {
-     "matches": ["*://*.youtoube.com/watch?v=*"],
-     "run_at": "document_start",
-     "js": ["fetchComments.js"]
-    }
-  ],
   "permissions": [
     "activeTab",
     "tabs"
