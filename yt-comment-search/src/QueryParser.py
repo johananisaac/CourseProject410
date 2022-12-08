@@ -6,13 +6,13 @@ class QueryParser:
         self.query = query
         self.queries = []
 
-    #to process the txt file
-    def parse(self):
+    # Lowercase, remove punctuation, and tokenize query
+    def parse(self): 
         query = self.query.lower()
         query = re.sub(r'[%s]' % re.escape(string.punctuation), '', query)
         self.queries.append(query.split())
-        #print('query',self.queries)
-        
+    
+    # Return tokenized query    
     def getQuery(self):
         return self.queries
 

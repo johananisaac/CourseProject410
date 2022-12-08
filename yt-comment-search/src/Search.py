@@ -13,30 +13,39 @@ class Search:
         self.comments = comments
 
     def getRankedResult(self, queryData):
+        # Parse the query
         query = QueryParser(queryData)
-        comment = CommentParser(self.comments)
         query.parse()
         parsedQuery = query.getQuery()
-        parsedComment = comment.getcomment()
-        comment.parsejsonwithinfo()
-        commentlineinfo = comment.getcommentLinewithinfo()
+
+        # Parse the comments
+        comment = CommentParser(self.comments)
+        parsedComment = comment.getComment()
+        comment.parseCommentInfo()
+        commentLineInfo = comment.getCommentLineWithInfo()
+
+        # Get the results for which comments match query 
         results = QueryProcessor(parsedQuery, parsedComment).run()
+
         queryNum = 0
-        returnedlist= dict()
+        returnedList= dict()
+
         for result in results:
             rankedlist = sorted(result.items(), key=operator.itemgetter(1))
             rankedlist.reverse()
             index = 0
-            for i in rankedlist[:10]:
-                textsToShow = commentlineinfo[str(i[0])]['text'].strip('\n')
-                authorToShow = commentlineinfo[str(i[0])]['authorName']
-                numLikesToShow = str(commentlineinfo[str(i[0])]['numLikes'])
-                timestampToShow = commentlineinfo[str(i[0])]['timestamp']
-                profileToShow = commentlineinfo[str(i[0])]['authorProfilePic']
+
+            # Store information for displaying comments
+            for i in rankedlist:
+                textsToShow = commentLineInfo[str(i[0])]['text'].strip('\n')
+                authorToShow = commentLineInfo[str(i[0])]['authorName']
+                numLikesToShow = str(commentLineInfo[str(i[0])]['numLikes'])
+                timestampToShow = commentLineInfo[str(i[0])]['timestamp']
+                profileToShow = commentLineInfo[str(i[0])]['authorProfilePic']
                 tmplist = [queryNum, i[0], index, i[1],textsToShow,authorToShow,numLikesToShow,timestampToShow,profileToShow]
                 index += 1
-                returnedlist[str(index)] = tmplist
+                returnedList[str(index)] = tmplist
             queryNum += 1
-        return returnedlist
+        return returnedList
 
 

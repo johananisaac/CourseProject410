@@ -8,26 +8,32 @@ class QueryProcessor:
 		self.dlt = findDocumentLength(comments)
 		self.index = buildInvertIndexAndLength(comments)
 
-	
+	# Run each query 
 	def run(self):
 		results = []
-		#print(self.queries)
 		for query in self.queries:
-			#print(query)
 			results.append(self.run_query(query))
 		return results
 
 	def run_query(self, query):
 		query_result = dict()
+
+		# Run for each token in the query
 		for term in query:
 			if term in self.index:
-				doc_dict = self.index[term] # retrieve index entry
-				for docID, freq in doc_dict.items(): #for each document and its word frequency
+				# Retrieve index entry
+				doc_dict = self.index[term] 
+
+				# For each document
+				for docID, freq in doc_dict.items(): 
+
+					# Get the score from the ranking algorithm
 					score = getBM25Score(n=len(doc_dict), f=freq, qf=1, r=0, N=len(self.dlt),
 									   docLength=self.dlt.getLength(docID), averageDocLength=self.dlt.getAverageLength()) # calculate score
-					if docID in query_result: #this document has already been scored once
+					
+					# Check if this document has been scored before
+					if docID in query_result: 
 						query_result[docID] += score
 					else:
 						query_result[docID] = score
-		print(query_result,'result')
 		return query_result

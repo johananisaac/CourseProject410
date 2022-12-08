@@ -1,6 +1,7 @@
 from DocLength import *
 from InvertedIndex import *
 
+# Builds inverted index
 def buildInvertIndexAndLength(comment):
 	idx = InvertedIndex()
 	
@@ -9,6 +10,7 @@ def buildInvertIndexAndLength(comment):
 			idx.addWordByID(str(word), str(docID))
 	return idx
 
+# Calculates document length
 def findDocumentLength(comment):
     docLength = DocLength()
     for docID in comment:
