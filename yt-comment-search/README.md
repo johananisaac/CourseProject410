@@ -57,6 +57,12 @@ output/error.html - displays an error page if there is a problem loading comment
 
 ### (5) Instructions to setup and run the application
 - Download the code from Github.
+- Install the necessary packages
+  - Navigate to "yt-comment-search" folder
+  - Run "pip install -r requirements.txt"
+- Run the local server
+  - Navigate to "src" folder
+  - run "app.py"
 - Open a Chrome browser.
   - Click “Extensions”
   - Click “Manage Extensions”
