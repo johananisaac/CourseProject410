@@ -3,6 +3,7 @@
 
 ## Link to Demo Video
 - https://drive.google.com/file/d/1xiYQtygWeh_n89zRQYsZPFuiDC1Kto-b/view?usp=sharing
+- (if the video quality is poor, download the video to view it)
 ### (1) An overview of the project
 The project applies some basic natural language processing techniques to process the text data from Youtube video comments and return comments according to their ranking score, given a search query. The project includes front-end and back-end interactions. We use the chrome extension package manifest V3, HTML, CSS and JavaScript for the front-end development and python for the back-end development. A user can get the searched result by opening up the extension in a Youtube video page, entering a query in the input textbox, then clicking the search button. Top-ranked comments, author names, profile photos, timestamps, and the number of replies will be displayed on a new page.
 ### (2) Team member contributions
